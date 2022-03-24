@@ -1,9 +1,9 @@
-package uk.co.panaxiom.playjongo;
+package io.github.lucassklp.playjongo;
 
 import org.junit.*;
 import play.test.WithApplication;
 
-import static org.fest.assertions.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Functional tests, with a running fake app.

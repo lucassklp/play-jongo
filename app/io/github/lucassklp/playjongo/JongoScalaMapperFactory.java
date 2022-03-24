@@ -1,4 +1,4 @@
-package uk.co.panaxiom.playjongo;
+package io.github.lucassklp.playjongo;
 
 import org.jongo.Mapper;
 import org.jongo.marshall.jackson.JacksonMapper;

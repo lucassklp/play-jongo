@@ -11,15 +11,13 @@ This is a Play 2.6.x Module for [Jongo](http://jongo.org/)
 * for 2.2.x use `0.6.0-jongo1.0`
 * for 2.1.x use `0.5.0-jongo0.4`
 
-[![Build Status](https://jenkins.inoio.de/job/play-jongo/badge/icon)](http://jenkins.inoio.de/job/play-jongo/)
-
 Installation
 -----------
 
 Add the following to your projects Build.scala (for build.sbt use `libraryDependencies` instead of `appDependencies`):
 
 	val appDependencies = Seq(
-	  "uk.co.panaxiom" %% "play-jongo" % "2.1.0-jongo1.3"
+	  "io.github.lucassklp" %% "play-jongo" % "2.2.0-jongo1.5"
 	)
 
 *__Note related to play-jongo with Play 2.2:__ because there were issues reported due to incompatibilities of Play 2.2!, bson4jackson and the current version of jackson,
@@ -32,7 +30,7 @@ you might actually want to use the following dependencies:*
 	  "com.fasterxml.jackson.core" % "jackson-core" % "2.1.0" force(),
 	  "org.mongodb" % "mongo-java-driver" % "2.11.3",
 	  "org.jongo" % "jongo" % "1.0",
-	  "uk.co.panaxiom" %% "play-jongo" % "0.7.0-jongo1.0"
+	  "io.github.lucassklp" %% "play-jongo" % "0.7.0-jongo1.0"
 	)
 
 You will need to override the application.conf configuration to specify your MongoDB configuration.
@@ -59,7 +57,7 @@ your own MongoClientFactory class like this:
 
     playjongo.mongoClientFactory="com.example.MyMongoClientFactory"
 
-The value should be the name of a class that extends from `uk.co.panaxiom.MongoClientFactory` and provide at least an empty constructor or
+The value should be the name of a class that extends from `io.github.lucassklp.MongoClientFactory` and provide at least an empty constructor or
 a constructor that takes a play Configuration.  For example:
 
 ```java
@@ -68,7 +66,7 @@ package com.example;
 import com.mongodb.*;
 import java.util.Arrays;
 import play.Configuration;
-import uk.co.panaxiom.MongoClientFactory;
+import io.github.lucassklp.MongoClientFactory;
 
 public class MyMongoClientFactory extends MongoClientFactory {
     private Configuration config = config;
@@ -100,7 +98,7 @@ public class MyMongoClientFactory extends MongoClientFactory {
 
 To customize the jongo mapper (see also ["Configuring Jongo Mapper"](http://jongo.org/#jongo-mapper) in the Jongo documentation) you can
 provide a factory that will be used to obtain the mapper passed to jongo. Your factory class must implement
-`uk.co.panaxiom.playjongo.JongoMapperFactory` and provide a default (public no-args) constructor.
+`io.github.lucassklp.playjongo.JongoMapperFactory` and provide a default (public no-args) constructor.
 You can configure your mapper factory like this:
 
     playjongo.mapperfactory="com.example.MyJongoMapperFactory"
@@ -110,7 +108,7 @@ and configures the jongo/jackson mapper with the `DefaultScalaModule`. To use th
 (e.g. add `"com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.7.9"`) in `project/Build.scala` and configure the factory in
 `conf/application.conf` like this:
 
-    playjongo.mapperfactory="uk.co.panaxiom.playjongo.JongoScalaMapperFactory"
+    playjongo.mapperfactory="io.github.lucassklp.playjongo.JongoScalaMapperFactory"
 
 Usage
 -----
