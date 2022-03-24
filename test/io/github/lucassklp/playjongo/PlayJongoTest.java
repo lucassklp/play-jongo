@@ -1,4 +1,4 @@
-package uk.co.panaxiom.playjongo;
+package io.github.lucassklp.playjongo;
 
 import com.mongodb.ServerAddress;
 import com.mongodb.WriteConcern;
@@ -8,8 +8,8 @@ import org.junit.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.fest.assertions.Assertions.assertThat;
-import static uk.co.panaxiom.playjongo.PlayJongoTest.MapBuilder.mapBuilder;
+import static org.assertj.core.api.Assertions.assertThat;
+import static io.github.lucassklp.playjongo.PlayJongoTest.MapBuilder.mapBuilder;
 
 public class PlayJongoTest {
     

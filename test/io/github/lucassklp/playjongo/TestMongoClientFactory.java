@@ -1,4 +1,4 @@
-package uk.co.panaxiom.playjongo;
+package io.github.lucassklp.playjongo;
 
 import com.typesafe.config.Config;
 
